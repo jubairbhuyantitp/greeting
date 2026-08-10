@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Xjatri | Flight Reminder</title>
 <style>
-:root{--blue:#0b5cff;--navy:#132238;--muted:#738095;--line:#e5eaf2;--soft:#f6f8fc}
+:root{--blue:#67c7f5;--navy:#132238;--muted:#738095;--line:#e5eaf2;--soft:#f6f8fc}
 *{box-sizing:border-box}
 body{margin:0;background:#eef2f7;font-family:Arial,"Noto Sans",sans-serif;color:var(--navy)}
 .wrapper{max-width:760px;margin:38px auto;padding:0 18px}
@@ -20,7 +20,7 @@ h1{font-size:24px;margin:0;font-weight:800}
 .field input:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px #edf3ff}
 .full{grid-column:1/-1}
 .actions{display:flex;justify-content:center;margin-top:24px}
-button{border:0;border-radius:13px;padding:15px 30px;background:linear-gradient(135deg,#0b5cff,#1744c6);color:#fff;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 10px 22px rgba(11,92,255,.22)}
+button{border:0;border-radius:13px;padding:15px 30px;background:linear-gradient(135deg,#67c7f5,#4db5e8);color:#fff;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 10px 22px rgba(103,199,245,.24)}
 button:hover{transform:translateY(-1px)}
 .note{text-align:center;color:#8490a1;font-size:12px;margin-top:13px}
 canvas{display:none}
@@ -107,11 +107,11 @@ function draw(){
  rr(105,65,1390,1070,34,"#ffffff");
 
  // Header
- rr(105,65,1390,245,34,"#0b5cff");
- ctx.fillStyle="#0b5cff";ctx.fillRect(105,205,1390,105);
+ rr(105,65,1390,245,34,"#67c7f5");
+ ctx.fillStyle="#67c7f5";ctx.fillRect(105,205,1390,105);
 
  // Logo centered
- const maxW=300,maxH=105,ls=Math.min(maxW/logo.width,maxH/logo.height);
+ const maxW=390,maxH=135,ls=Math.min(maxW/logo.width,maxH/logo.height);
  ctx.drawImage(logo,800-logo.width*ls/2,92+(105-logo.height*ls)/2,logo.width*ls,logo.height*ls);
 
  // Header badge
@@ -126,7 +126,7 @@ function draw(){
  rr(160,470,1280,205,24,"#f7f9fd","#e2e8f0");
  T(from,205,555,62,"800");
  T("DEPARTURE",207,598,14,"800","#7a8799");
- T("→",800,573,48,"800","#0b5cff","center");
+ T("→",800,573,48,"800","#67c7f5","center");
  T(to,1395,555,62,"800","#132238","right");
  T("ARRIVAL",1393,598,14,"800","#7a8799","right");
 
@@ -136,19 +136,19 @@ function draw(){
  T("PNR",800,724,13,"800","#8490a1","center");
  T(pnr,800,755,24,"800","#132238","center");
  T("DEPARTURE",1395,724,13,"800","#8490a1","right");
- T(dep,1395,755,24,"800","#132238","right");
+ T(dep,1395,755,36,"800","#132238","right");
  T(date,1395,786,14,"400","#7b8798","right");
 
  // Reporting alert
  rr(160,830,1280,112,20,"#fff8e8","#ffe2a8");
  T("AIRPORT REPORTING TIME",195,872,13,"800","#856619");
- T(report,195,910,27,"800","#5f4812");
- T("Please arrive at least 3 hours before international departure.",1395,895,15,"400","#70581e","right");
+ T(report,195,910,38,"800","#5f4812");
+ 
 
  // Footer
  T("Thank you for travelling with Xjatri.",800,1005,23,"800","#132238","center");
 
- const maxBW=260,maxBH=65,bs=Math.min(maxBW/bon.width,maxBH/bon.height);
+ const maxBW=340,maxBH=85,bs=Math.min(maxBW/bon.width,maxBH/bon.height);
  const bw=bon.width*bs,bh=bon.height*bs;
  ctx.drawImage(bon,800-bw/2,1055-bh/2,bw,bh);
 }
